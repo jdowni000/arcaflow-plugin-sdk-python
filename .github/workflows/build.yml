@@ -53,11 +53,11 @@ jobs:
       - name: Run tests with coverage
         run: |
           # Run the unit tests
-          python -m poetry run coverage -a -m unittest discover -v src
+          python -m poetry run coverage run -a -m unittest discover -v src
           # Run the example plugin
-          python -m poetry run coverage -a ./example_plugin.py -f example.yaml
+          python -m poetry run coverage run -a ./example_plugin.py -f example.yaml
           # Test the example plugin
-          python -m poetry run coverage -a ./test_example_plugin.py
+          python -m poetry run coverage run -a ./test_example_plugin.py
           # Generate the coverage HTML report
           python -m poetry run coverage html
       - name: Publish coverage report to job summary
